@@ -1,0 +1,162 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: colin thomas, student, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.38.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.19
+Assembler:       Armasm.exe V6.19
+Linker/Locator:  ArmLink.exe V6.19
+Library Manager: ArmAr.exe V6.19
+Hex Converter:   FromElf.exe V6.19
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DARMSTM.DLL V1.69.1.0
+Target DLL:      UL2CM3.DLL V1.164.8.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\colin\OneDrive\Documents\AASTOCK\uvision\jeuinterruptions.uvprojx
+Project File Date:  10/14/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+assembling startup_stm32f10x_md.s...
+RTE/Device/STM32F103RB/system_stm32f10x.c(64): warning: In file included from...
+C:/Users/colin/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+                                               ^
+C:/Users/colin/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *                code will be based on direct access to peripheral<92>s registers 
+                                                                    ^
+C:/Users/colin/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+RTE/Device/STM32F103RB/system_stm32f10x.c(166): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
+__I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+            ^
+RTE/Device/STM32F103RB/system_stm32f10x.c(166): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+__I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+    ^
+4 warnings generated.
+compiling system_stm32f10x.c...
+jeuinterruptionmain.c(1): warning: In file included from...
+C:/Users/colin/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+                                               ^
+C:/Users/colin/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *                code will be based on direct access to peripheral<92>s registers 
+                                                                    ^
+C:/Users/colin/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+jeuinterruptionmain.c(7): warning: // comments are not allowed in this language [-Wcomment]
+// GPIOA   : broche 6 pour controler la LED verte
+^
+jeuinterruptionmain.c(33): warning: no previous extern declaration for non-static variable 'led_on' [-Wmissing-variable-declarations]
+int led_on = 0; // Indique si la led est allum?e ou non
+    ^
+jeuinterruptionmain.c(33): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int led_on = 0; // Indique si la led est allum?e ou non
+^
+jeuinterruptionmain.c(34): warning: no previous extern declaration for non-static variable 'victoire' [-Wmissing-variable-declarations]
+int victoire = 0; // Indique si le joueur ? gagner ou non (ne sert pas ici)
+    ^
+jeuinterruptionmain.c(34): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int victoire = 0; // Indique si le joueur ? gagner ou non (ne sert pas ici)
+^
+jeuinterruptionmain.c(62): warning: 'return' will never be executed [-Wunreachable-code-return]
+        return 0;
+               ^
+jeuinterruptionmain.c(76): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOA->CRL &= ~(0xF << 20);
+                   ~~ ^~~~~~~~~~~~
+jeuinterruptionmain.c(87): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->CRH &= ~(0xF << 20);
+                   ~~ ^~~~~~~~~~~~
+jeuinterruptionmain.c(111): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+        TIM->ARR = arr;
+                 ~ ^~~
+jeuinterruptionmain.c(112): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+        TIM->PSC = psc;
+                 ~ ^~~
+jeuinterruptionmain.c(155): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        AFIO->EXTICR[3] &= ~(0x0F << 4);
+                        ~~ ^~~~~~~~~~~~
+jeuinterruptionmain.c(163): warning: no previous prototype for function 'TIM2_IRQHandler' [-Wmissing-prototypes]
+void TIM2_IRQHandler(void){
+     ^
+jeuinterruptionmain.c(163): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void TIM2_IRQHandler(void){
+^
+static 
+jeuinterruptionmain.c(172): warning: no previous prototype for function 'TIM3_IRQHandler' [-Wmissing-prototypes]
+void TIM3_IRQHandler(void){
+     ^
+jeuinterruptionmain.c(172): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void TIM3_IRQHandler(void){
+^
+static 
+jeuinterruptionmain.c(180): warning: no previous prototype for function 'TIM4_IRQHandler' [-Wmissing-prototypes]
+void TIM4_IRQHandler(void){
+     ^
+jeuinterruptionmain.c(180): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void TIM4_IRQHandler(void){
+^
+static 
+jeuinterruptionmain.c(190): warning: no previous prototype for function 'EXTI15_10_IRQHandler' [-Wmissing-prototypes]
+void EXTI15_10_IRQHandler(void){
+     ^
+jeuinterruptionmain.c(190): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void EXTI15_10_IRQHandler(void){
+^
+static 
+jeuinterruptionmain.c(207): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+int rand(){
+        ^
+         void
+17 warnings generated.
+compiling jeuinterruptionmain.c...
+linking...
+Program Size: Code=1608 RO-data=252 RW-data=0 ZI-data=1648  
+".\Objects\jeuinterruptions.axf" - 0 Error(s), 21 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil.STM32F1xx_DFP.2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/Device/STM32F103RB
+  ./RTE/_Target_1
+  C:/Users/colin/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/colin/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+
+   * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
+      Source file:   Device/Source/ARM/STM32F1xx_OPT.s
+      Source file:   Device/Source/system_stm32f10x.c
+      Include file:  RTE_Driver/Config/RTE_Device.h
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
